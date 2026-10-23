@@ -1,4 +1,4 @@
-package me.carlossanchez.facebook.ui.screens
+package me.carlossanchez.facebook.j.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

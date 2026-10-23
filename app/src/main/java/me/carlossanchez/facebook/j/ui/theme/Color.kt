@@ -1,4 +1,4 @@
-package me.carlossanchez.facebook.ui.theme
+package me.carlossanchez.facebook.j.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

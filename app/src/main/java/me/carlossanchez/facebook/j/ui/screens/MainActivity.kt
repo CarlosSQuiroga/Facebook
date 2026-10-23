@@ -1,4 +1,4 @@
-package me.carlossanchez.facebook.ui.screens
+package me.carlossanchez.facebook.j.ui.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
