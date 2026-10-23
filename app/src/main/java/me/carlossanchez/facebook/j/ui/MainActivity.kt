@@ -1,4 +1,4 @@
-package me.carlossanchez.facebook.j.ui.screens
+package me.carlossanchez.facebook.j.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,6 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import me.carlossanchez.facebook.j.ui.screens.FacebookLoginScreen
+import me.carlossanchez.facebook.j.ui.screens.FacebookRegisterScreen
+import me.carlossanchez.facebook.j.ui.screens.FeedScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,22 +21,22 @@ class MainActivity : ComponentActivity() {
             val myNavController = rememberNavController()
             NavHost(
                 navController = myNavController,
-                startDestination = "login",
+                startDestination = Routes.LOGIN,
                 modifier = Modifier.fillMaxSize()
             ) {
-                composable(route = "login")    {
+                composable(route = Routes.LOGIN) {
                     FacebookLoginScreen(onClickRegister = {
                         myNavController.navigate(route = "register")
                     }, onClickIniciarSesion = {
                         myNavController.navigate(route = "feed")
                     })
                 }
-                composable(route = "register") {
+                composable(route = Routes.REGISTER) {
                     FacebookRegisterScreen(onClickBack = {
                         myNavController.popBackStack()
                     })
                 }
-                composable(route = "feed"){
+                composable(route = Routes.REGISTER) {
                     FeedScreen()
                 }
             }
@@ -41,4 +44,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-

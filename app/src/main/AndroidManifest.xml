@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Facebook">
         <activity
-            android:name=".j.ui.screens.MainActivity"
+            android:name=".j.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Facebook"
