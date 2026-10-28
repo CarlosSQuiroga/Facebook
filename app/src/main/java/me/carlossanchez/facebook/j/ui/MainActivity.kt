@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import me.carlossanchez.facebook.j.ui.screens.FacebookForgotPasswordScreen
 import me.carlossanchez.facebook.j.ui.screens.FacebookLoginScreen
 import me.carlossanchez.facebook.j.ui.screens.FacebookRegisterScreen
 import me.carlossanchez.facebook.j.ui.screens.FeedScreen
@@ -25,19 +26,35 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxSize()
             ) {
                 composable(route = Routes.LOGIN) {
-                    FacebookLoginScreen(onClickRegister = {
-                        myNavController.navigate(route = "register")
-                    }, onClickIniciarSesion = {
-                        myNavController.navigate(route = "feed")
-                    })
+                    FacebookLoginScreen(
+                        onClickRegister = {
+                            myNavController.navigate(route = Routes.REGISTER)
+                        },
+                        onClickIniciarSesion = {
+                            myNavController.navigate(route = Routes.FEED)
+                        },
+                        onClickForgotPassword = {
+                            myNavController.navigate(route = Routes.FORGOT_PASSWORD)
+                        }
+                    )
                 }
                 composable(route = Routes.REGISTER) {
                     FacebookRegisterScreen(onClickBack = {
                         myNavController.popBackStack()
                     })
                 }
-                composable(route = Routes.REGISTER) {
+                composable(route = Routes.FEED) {
                     FeedScreen()
+                }
+                composable(route = Routes.FORGOT_PASSWORD) {
+                    FacebookForgotPasswordScreen(
+                        onClickBack = {
+                            myNavController.popBackStack()
+                        },
+                        onClickSend = {
+                            // Sin funciones adicionales como se solicitó
+                        }
+                    )
                 }
             }
 

@@ -8,17 +8,28 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import me.carlossanchez.facebook.j.ui.components.StoriesSection
 
 @Preview(showSystemUi = true)
 @Composable
 fun FeedScreen() {
     Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text("AQUI IRA EL FEED",
-            fontSize = 50.sp)
+        StoriesSection()
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxSize()
+                .weight(1f)
+        ) {
+            Text(
+                text = "AQUI IRA EL FEED",
+                fontSize = 30.sp
+            )
+        }
     }
 }
